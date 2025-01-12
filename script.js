@@ -52,22 +52,47 @@ function operate(number1, number2, op) {
 // console.log(operate(n1, n2, operator));
 
 const numbers = document.querySelectorAll('.number');
-
-// console.log(buttons);
+const symbol = document.querySelectorAll('.symbol');
+const clear = document.querySelector('.clear');
+const equal = document.querySelector('.equal');
 
 // display functions
 
 const display = document.querySelector('h1');
 
-// console.log(displayText);
-
 // this function gets me the inside of the numbers.
 function getN1() {
   for (let i = 0; i < 10; i++) {
     numbers[i].addEventListener('click', () => {
-      return (display.innerText += numbers[i].innerText);
+      const displayContent = (display.innerText += numbers[i].innerText);
+      return displayContent;
     });
   }
 }
-
 getN1();
+
+function getOperator() {
+  for (let i = 0; i < 4; i++) {
+    symbol[i].addEventListener('click', () => {
+      operator = symbol[i].innerText;
+      // console.log(operator);
+      display.innerText += operator;
+      return operator;
+    });
+  }
+}
+getOperator();
+
+function clearButton() {
+  clear.addEventListener('click', () => {
+    display.innerText = '';
+    (n1 = ''), (n2 = ''), (operator = '');
+  });
+}
+clearButton();
+
+// equal function
+// function equalButton() {
+//   equal.addEventListener('click', () => {
+//   })
+// }
