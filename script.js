@@ -3,39 +3,39 @@
 function add(n1, n2) {
   return n1 + n2;
 }
-console.log(add(2, 10));
+// console.log(add(2, 10));
 
 // subtract function
 
 function subtract(n1, n2) {
   return n1 - n2;
 }
-console.log(subtract(5, 1));
+// console.log(subtract(5, 1));
 
 // multiply function
 
 function multiply(n1, n2) {
   return n1 * n2;
 }
-console.log(multiply(2, 5));
+// console.log(multiply(2, 5));
 
 // divide function
 
 function divide(n1, n2) {
   return n1 / n2;
 }
-console.log(divide(10, 2));
+// console.log(divide(10, 2));
 
 // variable creation number 1 / operator / number 2
-let n1 = 0;
+let n1 = '';
 let operator = '';
-let n2 = 0;
+let n2 = '';
 
 // operate function: takes an operator and two numbers and calls one of the above functions
 
 function operate(number1, number2, op) {
-  number1 = n1;
-  number2 = n2;
+  number1 = +n1;
+  number2 = +n2;
   op = operator;
   switch (op) {
     case '+':
@@ -49,4 +49,25 @@ function operate(number1, number2, op) {
   }
 }
 
-console.log(operate(n1, n2, operator));
+// console.log(operate(n1, n2, operator));
+
+const buttons = document.querySelectorAll('button');
+
+// console.log(buttons);
+
+// display functions
+const btn1 = document.querySelector('.btn1');
+const display = document.querySelector('h1');
+
+// console.log(displayText);
+
+// this function gets me the inside of the numbers.
+function getN1() {
+  for (let i = 0; i < 17; i++) {
+    buttons[i].addEventListener('click', () => {
+      return (display.innerText += buttons[i].innerText);
+    });
+  }
+}
+
+getN1();
