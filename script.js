@@ -64,8 +64,8 @@ const display = document.querySelector('h1');
 function getN1() {
   for (let i = 0; i < 10; i++) {
     numbers[i].addEventListener('click', () => {
-      const displayContent = (display.innerText += numbers[i].innerText);
-      return displayContent;
+      display.innerText += numbers[i].innerText;
+      return display.innerText;
     });
   }
 }
@@ -95,4 +95,4 @@ clearButton();
 // function equalButton() {
 //   equal.addEventListener('click', () => {
 //   })
-// }
+// };
