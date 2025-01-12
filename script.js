@@ -51,21 +51,21 @@ function operate(number1, number2, op) {
 
 // console.log(operate(n1, n2, operator));
 
-const buttons = document.querySelectorAll('button');
+const numbers = document.querySelectorAll('.number');
 
 // console.log(buttons);
 
 // display functions
-const btn1 = document.querySelector('.btn1');
+
 const display = document.querySelector('h1');
 
 // console.log(displayText);
 
 // this function gets me the inside of the numbers.
 function getN1() {
-  for (let i = 0; i < 17; i++) {
-    buttons[i].addEventListener('click', () => {
-      return (display.innerText += buttons[i].innerText);
+  for (let i = 0; i < 10; i++) {
+    numbers[i].addEventListener('click', () => {
+      return (display.innerText += numbers[i].innerText);
     });
   }
 }
